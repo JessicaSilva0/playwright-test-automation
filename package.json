@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/JessicaSilva0/playwright-test-automation#readme",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@playwright/test": "^1.33.0",
     "prettier": "2.8.8"
   }

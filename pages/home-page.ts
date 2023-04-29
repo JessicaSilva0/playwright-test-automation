@@ -9,6 +9,6 @@ export async function goToBanking(homePage: Page){
 
 export async function goToLoginPage(homePage: Page) {
         await test.step("Go to Login Page", async () => {
-            await step.clickButton(homePage,"Sign In");
+            await step.clickLink(homePage,"Sign In");
         });
 }
