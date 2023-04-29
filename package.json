@@ -1,0 +1,22 @@
+{
+  "name": "playwright-test-automation",
+  "version": "1.0.0",
+  "description": "Automation tests using Playwright tool :)",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessicaSilva0/playwright-test-automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessicaSilva0/playwright-test-automation/issues"
+  },
+  "homepage": "https://github.com/JessicaSilva0/playwright-test-automation#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.33.0",
+    "prettier": "2.8.8"
+  }
+}
