@@ -1,4 +1,4 @@
-import { Locator, Page, test } from "@playwright/test";
+import {Page, test } from "@playwright/test";
 
 export async function clickButton(page: Page, buttonName: string){
     await test.step(`Click on the button '${buttonName}'`, async () => {
