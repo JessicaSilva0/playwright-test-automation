@@ -26,6 +26,6 @@ export async function signInAccount(page: Page, username: string, password: stri
 
 export async function signOffAccount(loginPage: Page){
     await test.step("Click on Sign Off Account", async () => {
-        await loginStep.clickButton(loginPage, "Sign Off");
+        await loginStep.clickLink(loginPage, "Sign Off");
     });
 }
