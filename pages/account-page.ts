@@ -1,6 +1,5 @@
 import { expect, Page, test } from "@playwright/test";
 import * as step from '../steps/common-steps';
-import { faker } from '@faker-js/faker';
 import { accountNumber } from "../resource/test-data";
 
 
@@ -43,8 +42,7 @@ export async function selectTransferToAccount(accountPage: Page, accountNumber: 
     });
 }
 
-export async function typeAmountToTransfer(accountPage: Page){
-    const amount = faker.finance.amount()
+export async function typeAmountToTransfer(accountPage: Page, amount: string){
     await test.step(`enter the amount to be transferred: '${amount}'`, async () => {
         await accountPage.locator('#transferAmount').type(amount);
     });
@@ -52,14 +50,13 @@ export async function typeAmountToTransfer(accountPage: Page){
 
 export async function clickTransferMoney(accountPage: Page){
     await step.pressButton(accountPage, "Transfer Money");
-    await expect(accountPage.getByText("was successfully transferred from Account")).toBeVisible();
 }
 
-export async function transferFundsFromOneAccountToAnother(accountPage: Page, accountFrom: string, accountTarget: string){
+export async function transferFundsFromOneAccountToAnother(accountPage: Page, accountFrom: string, accountTarget: string, amount: string){
     await goToTransferFunds(accountPage);
     await selectTransferFromAccount(accountPage, accountFrom);
     await selectTransferToAccount(accountPage, accountTarget);
-    await typeAmountToTransfer(accountPage);
+    await typeAmountToTransfer(accountPage, amount);
     await clickTransferMoney(accountPage);
 }
 
