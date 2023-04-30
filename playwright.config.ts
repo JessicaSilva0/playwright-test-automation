@@ -23,6 +23,17 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+      // All requests we send go to this API endpoint.
+      baseURL: 'https://demo.testfire.net/api',
+      extraHTTPHeaders: {
+          // We set this header per GitHub guidelines.
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          // Add authorization token to all requests.
+          // Assuming personal access token available in the environment.
+          'Authorization': `token ${process.env.API_TOKEN}`,
+      },
+
     /* Base URL to use in actions like `await pages.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
